@@ -40,7 +40,7 @@ jobs:
           }
           if ($bad) { throw "$bad archivos con errores de sintaxis" }
 
-      - name: Compilar el .apbx (contraseña del ZIP: malte)
+      - name: "Compilar el .apbx (contraseña del ZIP: malte)"
         shell: pwsh
         working-directory: src/playbook
         run: |
