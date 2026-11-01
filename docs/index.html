@@ -560,8 +560,9 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; } /* ta
       <li><b>541</b><span>acciones del playbook comprobadas una a una en el registro de Windows, sin fallos.</span></li>
       <li><b>208</b><span>scripts de la carpeta Atlas con el estado correcto.</span></li>
       <li><b>66/66</b><span>comprobaciones de <code>verificar-26h2.ps1</code> superadas.</span></li>
+      <li><b>0/62</b><span>antivirus detectan el <code>.apbx</code> de la v1.0.0 en <a href="https://www.virustotal.com/gui/file/51b598dffa3e25002924ff869c02af011fc48182260bb770fd13d105bb24a8ea">VirusTotal</a>. Al ser un ZIP con contraseña, algunos motores no pueden mirar dentro: por eso todo el código está en texto plano en GitHub.</span></li>
     </ul>
-    <p data-rise style="--i:3">La <a href="guia/instalar-atlasos-windows-11-26h2/">guía de instalación</a> lo explica paso a paso. Puedes repetir la prueba en tu equipo: <a href="https://github.com/zykmm/meridian-26h2/blob/main/tools/verificar-26h2.ps1"><code>tools/verificar-26h2.ps1</code></a> solo lee el sistema y te da el mismo informe. Y antes de instalar, sube el <code>.apbx</code> a <a href="https://www.virustotal.com">VirusTotal</a> y compara su SHA256 con el de la release.</p>
+    <p data-rise style="--i:3">La <a href="guia/instalar-atlasos-windows-11-26h2/">guía de instalación</a> lo explica paso a paso. Puedes repetir la prueba en tu equipo: <a href="https://github.com/zykmm/meridian-26h2/blob/main/tools/verificar-26h2.ps1"><code>tools/verificar-26h2.ps1</code></a> solo lee el sistema y te da el mismo informe. Antes de instalar, compara el SHA256 de tu descarga con el de la release.</p>
     <p class="tests-note" data-rise style="--i:4">Prueba 3 de la auditoría, 2 de octubre de 2026. Salida real a la derecha, recortada.</p>
   </div>
   <figure class="term" data-ui data-rise style="--i:2" aria-label="Salida de verificar-26h2.ps1 en la máquina virtual de pruebas">
@@ -593,7 +594,7 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; } /* ta
     </details>
     <details name="faq">
       <summary>¿Tiene virus?<span class="plus" aria-hidden="true"></span></summary>
-      <div class="answer"><p>Todo el playbook es texto plano en este repositorio, y GitHub Actions compila cada versión a partir de él. Cada release publica su SHA256.</p><p>Un aviso honesto: Defender puede marcar <code>Remove-Edge.exe</code> como <code>Trojan:Win32/Yomal!rfn</code>. Es una detección por reputación típica de los ejecutables PyInstaller. Meridian lo descarga fijado a una versión y comprueba su hash antes de ejecutarlo.</p></div>
+      <div class="answer"><p>Todo el playbook es texto plano en este repositorio, y GitHub Actions compila cada versión a partir de él. Cada release publica su SHA256. El de la v1.0.0 da <a href="https://www.virustotal.com/gui/file/51b598dffa3e25002924ff869c02af011fc48182260bb770fd13d105bb24a8ea">0 de 62 en VirusTotal</a>.</p><p>Un aviso honesto: Defender puede marcar <code>Remove-Edge.exe</code> como <code>Trojan:Win32/Yomal!rfn</code>. Es una detección por reputación típica de los ejecutables PyInstaller. Meridian lo descarga fijado a una versión y comprueba su hash antes de ejecutarlo.</p></div>
     </details>
     <details name="faq">
       <summary>¿Puedo volver atrás?<span class="plus" aria-hidden="true"></span></summary>

@@ -56,7 +56,7 @@
       <li>Download <code>Meridian-26H2-v1.0.0.apbx</code> and its <code>.sha256</code> from the <a href="https://github.com/zykmm/meridian-26h2/releases/latest">latest release</a>.</li>
       <li>Check the download in PowerShell and compare it with the <code>.sha256</code> file:
 <pre><code>(Get-FileHash .\Meridian-26H2-v1.0.0.apbx -Algorithm SHA256).Hash</code></pre>
-      For a second opinion, upload it to <a href="https://www.virustotal.com">VirusTotal</a>.</li>
+      The v1.0.0 scan on <a href="https://www.virustotal.com/gui/file/51b598dffa3e25002924ff869c02af011fc48182260bb770fd13d105bb24a8ea">VirusTotal</a> shows 0 of 62 (it is a password-protected ZIP, so some engines cannot look inside).</li>
       <li>Open AME Wizard and drop the <code>.apbx</code> onto the window.</li>
       <li>AME checks the requirements and walks you through turning off Defender and UCPD for the install.</li>
       <li>Pick your options: Defender, CPU mitigations, automatic updates, browser and whether to remove Edge. If unsure, keep the recommended ones.</li>

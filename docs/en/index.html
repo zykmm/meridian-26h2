@@ -561,8 +561,9 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; } /* ta
       <li><b>541</b><span>playbook actions checked one by one in the Windows registry, no failures.</span></li>
       <li><b>208</b><span>Atlas folder scripts with the right state.</span></li>
       <li><b>66/66</b><span><code>verificar-26h2.ps1</code> checks passed.</span></li>
+      <li><b>0/62</b><span>antivirus engines flag the v1.0.0 <code>.apbx</code> on <a href="https://www.virustotal.com/gui/file/51b598dffa3e25002924ff869c02af011fc48182260bb770fd13d105bb24a8ea">VirusTotal</a>. Since it is a password-protected ZIP, some engines cannot look inside: that is why all the code is plain text on GitHub.</span></li>
     </ul>
-    <p data-rise style="--i:3">The <a href="guide/install-atlasos-windows-11-26h2/">install guide</a> walks you through it. Repeat the test on your own PC: <a href="https://github.com/zykmm/meridian-26h2/blob/main/tools/verificar-26h2.ps1"><code>tools/verificar-26h2.ps1</code></a> only reads the system and gives you the same report. Before installing, upload the <code>.apbx</code> to <a href="https://www.virustotal.com">VirusTotal</a> and compare its SHA256 with the release.</p>
+    <p data-rise style="--i:3">The <a href="guide/install-atlasos-windows-11-26h2/">install guide</a> walks you through it. Repeat the test on your own PC: <a href="https://github.com/zykmm/meridian-26h2/blob/main/tools/verificar-26h2.ps1"><code>tools/verificar-26h2.ps1</code></a> only reads the system and gives you the same report. Before installing, compare your download's SHA256 with the release.</p>
     <p class="tests-note" data-rise style="--i:4">Audit test 3, 2 October 2026. Real output, trimmed. The script reports in Spanish.</p>
   </div>
   <figure class="term" data-ui data-rise style="--i:2" aria-label="verificar-26h2.ps1 output on the test virtual machine">
@@ -594,7 +595,7 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; } /* ta
     </details>
     <details name="faq">
       <summary>Does it contain malware?<span class="plus" aria-hidden="true"></span></summary>
-      <div class="answer"><p>The whole playbook is plain text in the repository, and GitHub Actions builds every release from it. Each release publishes its SHA256.</p><p>An honest note: Defender may flag <code>Remove-Edge.exe</code> as <code>Trojan:Win32/Yomal!rfn</code>, a reputation-based detection common with PyInstaller executables. Meridian downloads a pinned version and checks its hash before running it.</p></div>
+      <div class="answer"><p>The whole playbook is plain text in the repository, and GitHub Actions builds every release from it. Each release publishes its SHA256. The v1.0.0 file scores <a href="https://www.virustotal.com/gui/file/51b598dffa3e25002924ff869c02af011fc48182260bb770fd13d105bb24a8ea">0 of 62 on VirusTotal</a>.</p><p>An honest note: Defender may flag <code>Remove-Edge.exe</code> as <code>Trojan:Win32/Yomal!rfn</code>, a reputation-based detection common with PyInstaller executables. Meridian downloads a pinned version and checks its hash before running it.</p></div>
     </details>
     <details name="faq">
       <summary>Can I undo it?<span class="plus" aria-hidden="true"></span></summary>

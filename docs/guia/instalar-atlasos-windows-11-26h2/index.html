@@ -56,7 +56,7 @@
       <li>Descarga <code>Meridian-26H2-v1.0.0.apbx</code> y su <code>.sha256</code> desde la <a href="https://github.com/zykmm/meridian-26h2/releases/latest">última versión</a>.</li>
       <li>Comprueba la descarga en PowerShell y compárala con el contenido del <code>.sha256</code>:
 <pre><code>(Get-FileHash .\Meridian-26H2-v1.0.0.apbx -Algorithm SHA256).Hash</code></pre>
-      Si quieres una segunda opinión, súbelo a <a href="https://www.virustotal.com">VirusTotal</a>.</li>
+      El análisis de la v1.0.0 en <a href="https://www.virustotal.com/gui/file/51b598dffa3e25002924ff869c02af011fc48182260bb770fd13d105bb24a8ea">VirusTotal</a> da 0 de 62 (es un ZIP con contraseña, así que algunos motores no miran dentro).</li>
       <li>Abre AME Wizard y arrastra el <code>.apbx</code> a la ventana.</li>
       <li>AME comprueba los requisitos y te guía para desactivar temporalmente Defender y UCPD.</li>
       <li>Elige tus opciones: Defender, mitigaciones de CPU, actualizaciones automáticas, navegador y si quitas Edge. Si dudas, deja las recomendadas.</li>
