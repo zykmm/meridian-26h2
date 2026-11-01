@@ -1,0 +1,12 @@
+---
+title: Disable Core Isolation
+description: Disables Core Isolation (VBS) based on the user's options
+option: 'disable-core-isolation'
+actions:
+  - !powerShell:
+    command: '& """.\AtlasModules\Scripts\ScriptWrappers\ConfigVBS.ps1""" -DisableAllVBS'
+    wait: true
+    exeDir: true
+  # Atlas 26H2: keep the Atlas folder state in line with this option
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\Services\VbsState', value: 'state', data: '0', type: REG_DWORD}
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\Services\VbsState', value: 'path', data: 'C:\Windows\AtlasDesktop\7. Security\Core Isolation (VBS)\Disable VBS.cmd', type: REG_SZ}

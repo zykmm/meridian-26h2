@@ -1,0 +1,19 @@
+---
+title: Set File Associations
+description: Registers a one-time task that sets file associations for the user-selected web browser (and the Widgets policies) at the first logon after the reboot, when the User Choice Protection Driver (UCPD) is no longer loaded and can't block them
+actions:
+    # Atlas 26H2: while the playbook runs, UCPD is still loaded and blocks UserChoice and the Widgets policies,
+    # even with the renamed PowerShell copy used by FILEASSOC.cmd. The playbook disables UCPD (services.yml)
+    # and the 'UCPD velocity' task, so after the reboot postReboot.ps1 can apply them.
+    # postReboot.ps1 reads the browser from HKLM\SOFTWARE\AtlasOS\SetupOptions (config-pins.yml).
+  - !powerShell:
+    command: |
+      $ps1 = Join-Path ([Environment]::GetFolderPath('Windows')) 'AtlasModules\Scripts\postReboot.ps1'
+      $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument ('-NoP -NonI -EP Bypass -WindowStyle Hidden -File ' + [char]34 + $ps1 + [char]34)
+      $trigger = New-ScheduledTaskTrigger -AtLogOn
+      $trigger.Delay = 'PT30S'
+      $principal = New-ScheduledTaskPrincipal -UserId 'S-1-5-18' -LogonType ServiceAccount -RunLevel Highest
+      $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -ExecutionTimeLimit (New-TimeSpan -Minutes 15)
+      Register-ScheduledTask -TaskName 'AtlasPostReboot' -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null
+      Remove-ItemProperty -Path 'HKLM:\SOFTWARE\AtlasOS\PostReboot' -Name 'Attempts' -ErrorAction SilentlyContinue
+    wait: true

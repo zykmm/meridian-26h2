@@ -1,0 +1,15 @@
+# MacOS
+.DS_Store
+
+# Playbooks
+*.apbx
+*.apbx.tmp
+src/playbook/pester-tests
+src/playbook/VS Workspace.code-workspace
+
+# Compilacion local
+dist/
+__pycache__/
+
+# Herramientas de diseño (taste-skill)
+.taste-skill/

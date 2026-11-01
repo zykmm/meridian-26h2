@@ -1,0 +1,9 @@
+---
+title: Tamper Protection Reminder
+description: AME requires Tamper Protection to be turned off and it can't be turned back on from a script, so remind the user once after the reboot (only when Defender is kept)
+actions:
+  - !powerShell:
+    command: |
+      $ps1 = Join-Path ([Environment]::GetFolderPath('Windows')) 'AtlasModules\Scripts\tamperReminder.ps1'
+      New-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce' -Name 'AtlasTamperProtection' -Value ('powershell.exe -NoP -EP Bypass -WindowStyle Hidden -File ' + [char]34 + $ps1 + [char]34) -PropertyType String -Force | Out-Null
+    wait: true

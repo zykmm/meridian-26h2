@@ -1,0 +1,41 @@
+---
+title: Disable AutoRun
+description: Disables AutoRun, also known as AutoPlay, for optimal QoL
+actions:
+  - !registryValue:
+    path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers'
+    value: 'DisableAutoplay'
+    data: '1'
+    type: REG_DWORD
+    
+    
+    # Atlas 26H2 (B2-10): 'MSTakeNoAction' goes in the (Default) value, these used to be empty REG_NONE values named
+    # 'MSTakeNoAction'. The camera handler is under '...\CameraAlternate\ShowPicturesOnArrival'
+  - !registryValue:
+    path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers\EventHandlersDefaultSelection\CameraAlternate\ShowPicturesOnArrival'
+    value: ''
+    data: 'MSTakeNoAction'
+    type: REG_SZ
+    
+    
+  - !registryValue:
+    path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers\EventHandlersDefaultSelection\StorageOnArrival'
+    value: ''
+    data: 'MSTakeNoAction'
+    type: REG_SZ
+    
+    
+  - !registryValue:
+    path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers\UserChosenExecuteHandlers\CameraAlternate\ShowPicturesOnArrival'
+    value: ''
+    data: 'MSTakeNoAction'
+    type: REG_SZ
+    
+    
+  - !registryValue:
+    path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers\UserChosenExecuteHandlers\StorageOnArrival'
+    value: ''
+    data: 'MSTakeNoAction'
+    type: REG_SZ
+    
+    

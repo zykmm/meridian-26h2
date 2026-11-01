@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Problemas de AtlasOS oficial (24H2/25H2)
+    url: https://github.com/Atlas-OS/Atlas/issues
+    about: Meridian 26H2 es un fork NO oficial. Reporta aquí solo lo que pase con Meridian; lo del Atlas oficial va a su repositorio.
+  - name: Preguntas e ideas
+    url: https://github.com/zykmm/meridian-26h2/discussions
+    about: Dudas de instalación, comparativas y propuestas generales.

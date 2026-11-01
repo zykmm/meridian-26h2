@@ -1,0 +1,81 @@
+---
+title: Services and Drivers
+description: Configures services and drivers to reduce background system resource utilization
+onUpgrade: false
+actions:
+  # ----------------------------------
+  # - Potential references           -
+  # - Mostly upon IoT recommendation -
+  # ----------------------------------
+  # https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-vdi-recommendations-2004
+  # https://learn.microsoft.com/en-us/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server
+  # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/services
+
+  # Back up default Windows services & drivers
+  - !powerShell:
+    command: |
+      .\BACKUP.ps1 -FilePath """$([Environment]::GetFolderPath('Windows'))\AtlasModules\Other\winServices.reg"""
+    wait: true
+    exeDir: true
+
+  ##############################################################################################
+  ## SCRIPTS                                                                                  ##
+  ##############################################################################################
+
+  - !writeStatus: {status: 'Disabling File Sharing'}
+  - !powerShell:
+    command: '.\AtlasModules\Scripts\ScriptWrappers\DisableFileSharing.ps1 -Silent'
+    exeDir: true
+    wait: true
+    runas: currentUserElevated
+
+  - !writeStatus: {status: 'Disabling Location'}
+  - !cmd:
+    command: '"AtlasDesktop\3. General Configuration\Location\Disable Location (default).cmd" /silent'
+    exeDir: true
+    wait: true
+    runas: currentUserElevated
+
+  - !writeStatus: {status: 'Configuring Indexing'}
+  - !cmd:
+    command: '"AtlasDesktop\3. General Configuration\Search Indexing\Minimal Search Indexing (default).cmd" /silent'
+    exeDir: true
+    wait: true
+    runas: currentUserElevated
+
+  ##############################################################################################
+  ## SERVICES                                                                                 ##
+  ##############################################################################################
+
+  - !writeStatus: {status: 'Configuring services'}
+
+    # ------ Microsoft recommendation - 'OK to disable' ------
+  - !service: {name: 'OneSyncSvc', operation: change, startup: 4}
+  - !service: {name: 'TrkWks', operation: change, startup: 4}
+  - !service: {name: 'PcaSvc', operation: change, startup: 4}
+  - !service: {name: 'DiagTrack', operation: change, startup: 4}
+
+    # ------ Microsoft recommendation - 'Do not disable' -----
+  - !service: {name: 'WerSvc', operation: change, startup: 4} 
+
+    # ------- Microsoft recommendation - 'No guidance' ------
+  - !service: {name: 'wercplsupport', operation: change, startup: 4}
+  - !service: {name: 'UCPD', operation: change, startup: 4}
+
+  ##############################################################################################
+  ## DRIVERS                                                                                  ##
+  ##############################################################################################
+
+  - !writeStatus: {status: 'Configuring drivers'}
+
+    # NetBios support can be enabled with the file sharing script
+  - !service: {name: 'NetBT', operation: change, startup: 4}
+    # Atlas 26H2 (B5-2): 'diagnosticshub.standardcollector.service', 'GpuEnergyDrv' and 'Telemetry' don't exist on 25H2/26H2
+    # Pro and AME created a service key with only 'Start' in it for them, so they're only changed if they exist
+  - !powerShell:
+    command: |
+      'diagnosticshub.standardcollector.service', 'GpuEnergyDrv', 'Telemetry' | ForEach-Object {
+        $key = 'HKLM:\SYSTEM\CurrentControlSet\Services\' + $_
+        if (Test-Path $key) { Set-ItemProperty -Path $key -Name 'Start' -Value 4 -Type DWord }
+      }
+    wait: true

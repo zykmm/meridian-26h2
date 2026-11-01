@@ -1,0 +1,12 @@
+---
+title: Disable Windows 11 Settings Banner
+description: Disables the Windows 11 Settings banner (ValueBanner), which normally displays 'advertisements' such as Microsoft 365 on non-Enterprise editions
+actions:
+  # Atlas 26H2 (B5-4): the class doesn't exist on a clean 26H2 and the action created a key with only 'ActivationType'
+  # in it, so it's only changed if it exists
+  - !powerShell:
+    command: |
+      $key = 'HKLM:\SOFTWARE\Microsoft\WindowsRuntime\ActivatableClassId\ValueBanner.IdealStateFeatureControlProvider'
+      if (Test-Path $key) { Set-ItemProperty -Path $key -Name 'ActivationType' -Value 0 -Type DWord }
+    builds: [ '>=22000' ]
+    wait: true

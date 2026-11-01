@@ -1,0 +1,25 @@
+---
+title: Defaults
+description: Run default AtlasFolder scripts
+actions:
+  - !writeStatus: {status: 'Applying default Atlas Folder settings'}
+  - !cmd:
+    command: 'reg import .\DEFAULT.reg'
+    exeDir: true
+    wait: true
+    runas: currentUserElevated
+
+    # Atlas 26H2 (D1/F3-6): DEFAULT.ps1 used to run only when upgrading ('onUpgrade: true'), so on clean installs
+    # 47 of the 57 '(default)' scripts never ran although DEFAULT.reg marked them as applied. It now always runs
+    # and reads these values to respect the wizard options.
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\SetupOptions', value: 'AutoUpdates', data: 'disable', type: REG_SZ, option: 'auto-updates-disable'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\SetupOptions', value: 'AutoUpdates', data: 'default', type: REG_SZ, option: 'auto-updates-default'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\SetupOptions', value: 'Hibernation', data: 'disable', type: REG_SZ, option: 'disable-hibernation'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\SetupOptions', value: 'Hibernation', data: 'default', type: REG_SZ, option: '!disable-hibernation'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\SetupOptions', value: 'Defender', data: 'enable', type: REG_SZ, option: 'defender-enable'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\AtlasOS\SetupOptions', value: 'Defender', data: 'disable', type: REG_SZ, option: 'defender-disable'}
+  - !powerShell:
+    command: '.\DEFAULT.ps1'
+    exeDir: true
+    wait: true
+    runas: currentUserElevated

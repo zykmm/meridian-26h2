@@ -1,0 +1,26 @@
+name: Propuesta de mejora
+description: Sugiere un cambio para Meridian 26H2.
+title: "[IDEA] "
+labels:
+  - enhancement
+body:
+  - type: checkboxes
+    attributes:
+      label: Antes de continuar
+      options:
+        - label: Busqué en los [issues existentes](https://github.com/zykmm/meridian-26h2/issues?q=is%3Aissue) y no está propuesta.
+          required: true
+  - type: textarea
+    attributes:
+      label: Qué propones
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Por qué
+      description: Qué problema resuelve y a quién afecta.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Alternativas o referencias

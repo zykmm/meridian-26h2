@@ -1,0 +1,70 @@
+name: Reporte de error
+description: Algo no funciona después de aplicar Meridian 26H2.
+title: "[BUG] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar. Meridian 26H2 es un **fork no oficial** de AtlasOS: no reportes este problema al equipo de Atlas.
+  - type: checkboxes
+    attributes:
+      label: Antes de continuar
+      options:
+        - label: Busqué en los [issues existentes](https://github.com/zykmm/meridian-26h2/issues?q=is%3Aissue) y no está reportado.
+          required: true
+        - label: Uso la última versión de Meridian 26H2 y Windows 11 26H2 (build 26300) con todas las actualizaciones.
+          required: true
+  - type: input
+    attributes:
+      label: Versión de Meridian
+      placeholder: "v1.0.0"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Build de Windows (ejecuta `winver`)
+      placeholder: "26300.xxxx"
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Opciones elegidas en AME Wizard
+      multiple: true
+      options:
+        - Defender activado
+        - Defender desactivado
+        - Mitigaciones desactivadas
+        - Actualizaciones automáticas
+        - Edge eliminado
+        - Toolbox instalado
+        - Otro navegador instalado
+  - type: textarea
+    attributes:
+      label: Qué pasó
+      description: Describe el error. Añade capturas si puedes.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Pasos para reproducirlo
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Qué esperabas que pasara
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Registros
+      description: Si existen, adjunta `C:\ProgramData\AME\Logs` (Log.yml, Output.txt) y `C:\Windows\AtlasModules\Logs\postReboot.log`. Revisa antes que no tengan datos personales.
+  - type: textarea
+    attributes:
+      label: Hardware
+      placeholder: CPU, GPU, RAM, disco, ¿máquina virtual?

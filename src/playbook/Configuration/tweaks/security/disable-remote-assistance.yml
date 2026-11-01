@@ -1,0 +1,17 @@
+---
+title: Disable Remote Assistance
+description: As Remote Assistance is an unused and a potential vulnerable feature, it is disabled
+actions:
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Control\Remote Assistance'
+    value: 'fAllowFullControl'
+    data: '0'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Control\Remote Assistance'
+    value: 'fAllowToGetHelp'
+    data: '0'
+    type: REG_DWORD
+  # Atlas 26H2 (F3-4): 'netsh ... group="Remote Assistance"' found no rules on non-English Windows because the group
+  # name is translated ("Asistencia remota"). '@FirewallAPI.dll,-33002' is the same in every language.
+  - !powerShell: {command: 'Get-NetFirewallRule -Group ''@FirewallAPI.dll,-33002'' -ErrorAction SilentlyContinue | Disable-NetFirewallRule', wait: true}
