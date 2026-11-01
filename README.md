@@ -4,7 +4,6 @@
 
 <p align="center">
   <a href="https://github.com/zykmm/meridian-26h2/releases"><img alt="Última versión" src="https://img.shields.io/github/v/release/zykmm/meridian-26h2?include_prereleases&style=flat-square&label=versi%C3%B3n&color=256f82"></a>
-  <a href="https://github.com/zykmm/meridian-26h2/actions/workflows/build.yml"><img alt="Compilación" src="https://img.shields.io/github/actions/workflow/status/zykmm/meridian-26h2/build.yml?style=flat-square&label=compilaci%C3%B3n"></a>
   <img alt="Windows 11 26H2" src="https://img.shields.io/badge/Windows%2011-26H2%20%C2%B7%20build%2026300-0a0a0a?style=flat-square">
   <a href="LICENSE"><img alt="Licencia GPLv3" src="https://img.shields.io/badge/licencia-GPLv3-0a0a0a?style=flat-square"></a>
 </p>
@@ -81,7 +80,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\verificar-26h2.ps1 -Nombre
 <details>
 <summary><b>¿Es seguro? ¿Tiene virus?</b></summary>
 
-Todo el playbook es texto plano en este repositorio. GitHub Actions compila el `.apbx` a partir de él ([`build.yml`](.github/workflows/build.yml)) y publica su SHA256. Los pocos binarios incluidos son los de AtlasOS, con código en [Atlas-OS/utilities](https://github.com/Atlas-OS/utilities) y hashes en [`AtlasModules/README.md`](src/playbook/Executables/AtlasModules/README.md). Un `.apbx` es un ZIP con la contraseña `malte`: puedes abrirlo con 7-Zip y revisarlo.
+Todo el playbook es texto plano en este repositorio. Cada `.apbx` se compila a partir de él con `local-build.ps1` y se publica con su SHA256, así que puedes recompilarlo y comparar. Los pocos binarios incluidos son los de AtlasOS, con código en [Atlas-OS/utilities](https://github.com/Atlas-OS/utilities) y hashes en [`AtlasModules/README.md`](src/playbook/Executables/AtlasModules/README.md). Un `.apbx` es un ZIP con la contraseña `malte`: puedes abrirlo con 7-Zip y revisarlo.
 </details>
 
 <details>
@@ -117,7 +116,7 @@ cd src/playbook
 
 `core.longpaths=true` hace falta en Windows porque algunas rutas de la carpeta Atlas pasan de 260 caracteres.
 
-Cada vez que se sube una etiqueta `v*`, GitHub Actions valida, compila y publica la release con su SHA256. Las etiquetas con guion (`v1.0.0-beta.1`) se publican como *pre-release*. Para contribuir, lee [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
+Para contribuir, lee [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 ## Créditos y licencia
 
