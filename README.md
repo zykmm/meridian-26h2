@@ -1,10 +1,12 @@
 <p align="center">
-  <a href="https://zykmm.github.io/meridian-26h2/"><img src="docs/img/banner.png" alt="Meridian 26H2: fork no oficial de AtlasOS 0.5.0, adaptado y auditado para Windows 11 26H2 (build 26300)" width="100%"></a>
+  <a href="https://zykmm.github.io/meridian-26h2/"><img src="docs/img/banner.png" alt="Meridian 26H2: AtlasOS para Windows 11 26H2 (build 26300), fork no oficial para optimizar y hacer debloat de Windows 11" width="100%"></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/zykmm/meridian-26h2/releases"><img alt="Última versión" src="https://img.shields.io/github/v/release/zykmm/meridian-26h2?include_prereleases&style=flat-square&label=versi%C3%B3n&color=256f82"></a>
   <a href="https://github.com/zykmm/meridian-26h2/actions/workflows/build.yml"><img alt="Compilación" src="https://img.shields.io/github/actions/workflow/status/zykmm/meridian-26h2/build.yml?style=flat-square&label=compilaci%C3%B3n"></a>
+  <a href="https://github.com/zykmm/meridian-26h2/releases"><img alt="Descargas" src="https://img.shields.io/github/downloads/zykmm/meridian-26h2/total?style=flat-square&label=descargas&color=dafa9c&labelColor=0f0f0f"></a>
+  <a href="https://github.com/zykmm/meridian-26h2/stargazers"><img alt="Estrellas" src="https://img.shields.io/github/stars/zykmm/meridian-26h2?style=flat-square&label=estrellas&color=0f0f0f"></a>
   <img alt="Windows 11 26H2" src="https://img.shields.io/badge/Windows%2011-26H2%20%C2%B7%20build%2026300-0a0a0a?style=flat-square">
   <a href="LICENSE"><img alt="Licencia GPLv3" src="https://img.shields.io/badge/licencia-GPLv3-0a0a0a?style=flat-square"></a>
 </p>
@@ -20,6 +22,8 @@
 > **Meridian 26H2 es un fork NO oficial de [AtlasOS](https://github.com/Atlas-OS/Atlas).** No pertenece al equipo de Atlas ni está respaldado por él. Los errores de Meridian se reportan [aquí](https://github.com/zykmm/meridian-26h2/issues), nunca a Atlas. Si usas Windows 11 24H2 o 25H2, instala el [AtlasOS oficial](https://atlasos.net).
 
 ## Qué es
+
+**Meridian 26H2 es la forma de usar AtlasOS en Windows 11 26H2.** Sirve para optimizar Windows 11, quitar bloatware y telemetría (*debloat*), ganar rendimiento en juegos y mejorar la privacidad, sin reinstalar el sistema.
 
 AtlasOS 0.5.0 se publicó para Windows 11 24H2 y 25H2. **Meridian 26H2** toma ese playbook (commit [`6c26aab`](https://github.com/Atlas-OS/Atlas/commit/6c26aab)) y lo lleva a **Windows 11 26H2 (build 26300)**, con la misma idea: más rendimiento, más privacidad y menos molestias, sin romper lo que hace falta.
 
@@ -70,9 +74,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\verificar-26h2.ps1 -Nombre
 
 ## Problemas conocidos
 
-- **CrossDevice puede volver.** Windows lo reinstala en algunos equipos tras un segundo reinicio (F5-9).
-- **El acceso directo de Copilot en la barra de tareas** puede reaparecer tras otro arranque (F3-10).
-- **Usuario estándar:** al crear una cuenta sin permisos de administrador, el script de usuarios nuevos pide elevación (F3-9).
 - **Atlas Toolbox 0.1.13** tiene fallos propios al mostrar algunos estados (Terminals, Mitigations, indexación). No son del playbook (F5-2).
 - **Defender y `Remove-Edge.exe`:** Defender puede detectarlo como `Trojan:Win32/Yomal!rfn`, una detección por reputación habitual en ejecutables PyInstaller. Durante la instalación no afecta. Si después ejecutas «Remove Edge» desde la carpeta Atlas con Defender activo, puede fallar. Meridian descarga la versión 2.3 y comprueba su SHA256 antes de ejecutarla.
 
@@ -133,7 +134,7 @@ Meridian 26H2 se distribuye bajo la **[GNU GPLv3](LICENSE)**, la misma licencia 
 <details>
 <summary><b>English</b></summary>
 
-**Meridian 26H2 is an UNOFFICIAL fork of the [AtlasOS](https://github.com/Atlas-OS/Atlas) 0.5.0 playbook**, adapted and audited for **Windows 11 26H2 (build 26300)**. It is not affiliated with or endorsed by the Atlas team. Please report Meridian issues [here](https://github.com/zykmm/meridian-26h2/issues), never to Atlas. On 24H2 or 25H2, use the official AtlasOS.
+**Meridian 26H2 is an UNOFFICIAL fork of the [AtlasOS](https://github.com/Atlas-OS/Atlas) 0.5.0 playbook**, adapted and audited for **Windows 11 26H2 (build 26300)**. Use it to run AtlasOS-style optimizations on Windows 11 26H2: debloat Windows 11, remove telemetry, Copilot and Edge, improve gaming performance and privacy, with every change documented. It is not affiliated with or endorsed by the Atlas team. Please report Meridian issues [here](https://github.com/zykmm/meridian-26h2/issues), never to Atlas. On 24H2 or 25H2, use the official AtlasOS.
 
 Download the `.apbx` from [Releases](https://github.com/zykmm/meridian-26h2/releases), verify its SHA256, and drop it into [AME Wizard](https://ameliorated.io). Every change from AtlasOS 0.5.0 and the reason for it is listed (in Spanish) in [`CAMBIOS-26H2.md`](CAMBIOS-26H2.md). License: GPLv3.
 </details>

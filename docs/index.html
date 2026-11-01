@@ -3,51 +3,70 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meridian 26H2 · fork no oficial de AtlasOS para Windows 11 26H2</title>
-<meta name="description" content="Meridian 26H2 es un fork no oficial de AtlasOS 0.5.0, adaptado y auditado para Windows 11 26H2 (build 26300). Rendimiento, privacidad y usabilidad con AME Wizard.">
-<meta property="og:title" content="Meridian 26H2">
-<meta property="og:description" content="Fork no oficial de AtlasOS 0.5.0 para Windows 11 26H2 (build 26300).">
-<meta property="og:image" content="https://zykmm.github.io/meridian-26h2/img/escritorio.webp">
-<meta name="theme-color" content="#dedad3">
+<title>Meridian 26H2: AtlasOS para Windows 11 26H2 · optimizar y debloat (fork no oficial)</title>
+<meta name="description" content="Meridian 26H2 es un fork no oficial de AtlasOS 0.5.0 para Windows 11 26H2 (build 26300). Playbook gratuito de AME Wizard que quita telemetría y bloatware, mejora el rendimiento en juegos y la privacidad. Código abierto, GPLv3.">
+<meta name="keywords" content="AtlasOS 26H2, Atlas OS Windows 11 26H2, Meridian 26H2, debloat Windows 11, optimizar Windows 11, Windows 11 26H2, build 26300, AME Wizard, playbook, privacidad, gaming, telemetría">
+<meta name="author" content="zykmm">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://zykmm.github.io/meridian-26h2/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Meridian 26H2">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://zykmm.github.io/meridian-26h2/">
+<meta property="og:title" content="Meridian 26H2: AtlasOS para Windows 11 26H2">
+<meta property="og:description" content="Fork no oficial de AtlasOS 0.5.0 para Windows 11 26H2 (build 26300). Más rápido, más privado, con cada cambio explicado.">
+<meta property="og:image" content="https://zykmm.github.io/meridian-26h2/img/social-preview.png">
+<meta property="og:image:width" content="2560">
+<meta property="og:image:height" content="1280">
+<meta property="og:image:alt" content="Meridian 26H2: fork no oficial de AtlasOS 0.5.0 para Windows 11 26H2">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meridian 26H2: AtlasOS para Windows 11 26H2">
+<meta name="twitter:description" content="Fork no oficial de AtlasOS 0.5.0 para Windows 11 26H2 (build 26300).">
+<meta name="twitter:image" content="https://zykmm.github.io/meridian-26h2/img/social-preview.png">
+<meta name="theme-color" content="#0f0f0f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Meridian 26H2", "alternateName": ["Meridian 26H2 AtlasOS fork", "AtlasOS 26H2 unofficial"], "description": "Fork no oficial de AtlasOS 0.5.0 para Windows 11 26H2 (build 26300): playbook de AME Wizard que optimiza el rendimiento, quita telemetría y bloatware y mejora la privacidad.", "applicationCategory": "UtilitiesApplication", "applicationSubCategory": "Windows optimization playbook", "operatingSystem": "Windows 11 26H2 (build 26300)", "softwareVersion": "1.0.0", "license": "https://www.gnu.org/licenses/gpl-3.0.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://zykmm.github.io/meridian-26h2/", "downloadUrl": "https://github.com/zykmm/meridian-26h2/releases", "codeRepository": "https://github.com/zykmm/meridian-26h2", "image": "https://zykmm.github.io/meridian-26h2/img/social-preview.png", "screenshot": "https://zykmm.github.io/meridian-26h2/img/escritorio.webp", "author": {"@type": "Person", "name": "zykmm", "url": "https://github.com/zykmm"}, "isBasedOn": {"@type": "SoftwareSourceCode", "name": "AtlasOS", "codeRepository": "https://github.com/Atlas-OS/Atlas"}, "inLanguage": "es", "keywords": "AtlasOS, Windows 11 26H2, debloat, optimizar Windows 11, AME Wizard, playbook, privacidad, rendimiento, gaming"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Es AtlasOS oficial?", "acceptedAnswer": {"@type": "Answer", "text": "No. Es un fork no oficial del playbook de AtlasOS 0.5.0, sin relación con el equipo de Atlas, adaptado y auditado para Windows 11 26H2 (build 26300). Usa su código bajo la licencia GPLv3."}}, {"@type": "Question", "name": "¿Tiene virus?", "acceptedAnswer": {"@type": "Answer", "text": "Todo el playbook es texto plano en el repositorio de GitHub y cada .apbx se compila a partir de él con GitHub Actions y se publica con su SHA256. Defender puede marcar Remove-Edge.exe por reputación; Meridian lo descarga fijado a una versión y comprueba su hash."}}, {"@type": "Question", "name": "¿Puedo volver atrás?", "acceptedAnswer": {"@type": "Answer", "text": "No hay desinstalador, igual que en AtlasOS. Muchas opciones se cambian después desde la carpeta Atlas o Atlas Toolbox, pero para volver a Windows sin modificar hay que reinstalarlo. Haz una copia de seguridad antes."}}, {"@type": "Question", "name": "¿Funciona en Windows 11 24H2 o 25H2?", "acceptedAnswer": {"@type": "Answer", "text": "No: el asistente solo acepta la build 26300 (Windows 11 26H2). Para 24H2 y 25H2 está el AtlasOS oficial."}}, {"@type": "Question", "name": "¿Qué contraseña pide el archivo .apbx?", "acceptedAnswer": {"@type": "Answer", "text": "Un .apbx es un ZIP renombrado con la contraseña malte, la de todos los playbooks de AME Wizard."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <style>
 :root {
-  --bg: #dedad3;
-  --surface: #d3cec6;
-  --surface-2: #c6c0b6;
-  --ink: #0a0a0a;
-  --muted: #4f4b45;
-  --accent: #256f82;
-  --accent-ink: #ffffff;
-  --dark: #0a0a0a;
-  --dark-ink: #ededeb;
-  --light: #e9e9e6;
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --surface-2: #262626;
+  --ink: #ffffff;
+  --muted: #a3a3a3;
+  --accent: #dafa9c;
+  --accent-2: #c6ef74;
+  --accent-ink: #0f0f0f;
+  --dark: #000000;
+  --dark-ink: #f2f2f2;
+  --light: #ffffff;
+  --light-ink: #0f0f0f;
 
   --step-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --step-lead: clamp(1.375rem, 1.15rem + 0.8vw, 1.875rem);
-  --step-head: clamp(2.25rem, 1.2rem + 3.6vw, 4.5rem);
+  --step-head: clamp(2.5rem, 1.2rem + 5vw, 5.5rem);
   --step-giant: clamp(6rem, 2rem + 13vw, 14rem);
 
   --margin: clamp(16px, 2.2vw, 32px);
   --gap-section: clamp(120px, 14vw, 200px);
   --radius: 4px;
   --ease: cubic-bezier(.2, .7, .2, 1);
-  --font: "Bricolage Grotesque", system-ui, sans-serif;
+  --font: "Archivo", system-ui, sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
   font-family: var(--font); font-size: var(--step-body); line-height: 1.5;
-  font-optical-sizing: auto;
+  font-stretch: 100%;
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.035em; line-height: 0.98; }
+h1, h2, h3, .display { margin: 0; font-weight: 800; font-stretch: 62%; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.86; }
 p { margin: 0; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
@@ -58,7 +77,7 @@ p { margin: 0; }
   border-radius: var(--radius); border: 0; font: inherit; font-weight: 500; cursor: pointer;
   transition: transform 160ms var(--ease), background-color 160ms var(--ease);
 }
-.button:hover { background: #1d5a6a; }
+.button:hover { background: var(--accent-2); }
 .button:active { transform: scale(.97); }
 .skip { position: absolute; left: -999px; top: 8px; }
 .skip:focus { left: 8px; z-index: 50; background: var(--ink); color: var(--bg); padding: 8px 12px; }
@@ -68,7 +87,7 @@ p { margin: 0; }
   position: fixed; inset: 0 0 auto 0; z-index: 30; display: flex; align-items: center; gap: 24px;
   padding: 14px var(--margin); font-size: 15px; background: var(--bg);
 }
-.wordmark { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; margin-right: auto; }
+.wordmark { font-weight: 800; font-stretch: 62%; text-transform: uppercase; font-size: 22px; letter-spacing: 0; text-decoration: none; margin-right: auto; }
 .bar nav { display: flex; gap: 22px; }
 .bar nav a { text-decoration: none; padding: 10px 0; }
 .bar nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -77,8 +96,8 @@ p { margin: 0; }
 /* ---------- hero: sentence split by a frame ---------- */
 .hero { position: relative; height: 240svh; }
 .hero-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-.hero h1 { font-size: clamp(2.25rem, 3.6vw, 3.75rem); font-weight: 500; line-height: 1; }
-.hero h1 { position: absolute; left: var(--margin); right: var(--margin); top: 50%; transform: translateY(-50%); z-index: 2; display: flex; justify-content: space-between; gap: 40vw; }
+.hero h1 { font-size: clamp(2.75rem, 5.4vw, 6rem); line-height: .86; }
+.hero h1 { position: absolute; left: var(--margin); right: var(--margin); top: 50%; transform: translateY(-50%); z-index: 2; display: flex; justify-content: space-between; gap: 38vw; }
 .hero .h-right { text-align: right; }
 .reel-window { position: absolute; inset: 0; left: 50%; width: 35vw; transform: translateX(-50%); }
 .reel { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-direction: column; gap: 24px; will-change: transform; }
@@ -92,7 +111,7 @@ p { margin: 0; }
 /* ---------- intro ---------- */
 .intro { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; padding: var(--gap-section) var(--margin) 0; align-items: start; }
 .intro-text { grid-column: 2 / span 4; display: grid; gap: 1.1em; max-width: 34ch; }
-.intro-text h2 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: .4em; }
+.intro-text h2 { font-size: var(--step-lead); margin-bottom: .3em; }
 .intro-text p:first-of-type { font-weight: 500; }
 .intro-text p + p { color: var(--muted); }
 .intro-figure { grid-column: 7 / span 6; margin: 0; }
@@ -114,15 +133,15 @@ p { margin: 0; }
 .cmd-item {
   display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 24px;
   padding: .12em .25em; cursor: pointer; border-radius: var(--radius);
-  font-size: clamp(2rem, 1rem + 3.6vw, 4.5rem); font-weight: 600; letter-spacing: -0.035em; line-height: 1.1;
+  font-size: var(--step-head); font-weight: 800; font-stretch: 62%; text-transform: uppercase; letter-spacing: -0.005em; line-height: 1;
   transition: background-color 140ms var(--ease), color 140ms var(--ease);
 }
 .cmd-item:hover { background: var(--surface); }
 .cmd-item[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); }
-.cmd-keys { display: flex; gap: 6px; font-size: var(--step-body); font-weight: 500; letter-spacing: 0; }
+.cmd-keys { display: flex; gap: 6px; font-size: var(--step-body); font-weight: 600; font-stretch: 100%; letter-spacing: 0; }
 .cmd-keys kbd { font-family: var(--font); display: grid; place-items: center; min-width: 1.6em; height: 1.6em; padding: 0 .25em; background: var(--surface-2); color: var(--ink); border-radius: 3px; }
-.cmd-item[aria-selected="true"] kbd { background: #1d5a6a; color: var(--accent-ink); }
-.cmd-detail { grid-column: 1 / -1; display: none; max-width: 60ch; margin: .4em 0 .35em; font-size: var(--step-body); font-weight: 400; letter-spacing: 0; line-height: 1.5; }
+.cmd-item[aria-selected="true"] kbd { background: #b8e26a; color: var(--accent-ink); }
+.cmd-detail { grid-column: 1 / -1; display: none; max-width: 60ch; margin: .4em 0 .35em; font-size: var(--step-body); font-weight: 400; font-stretch: 100%; text-transform: none; letter-spacing: 0; line-height: 1.5; }
 .cmd-item[aria-selected="true"] .cmd-detail { display: block; }
 .cmd-empty { font-size: var(--step-lead); padding: .5em .25em; }
 .cmd-more { margin-top: 28px; font-size: var(--step-body); }
@@ -131,8 +150,8 @@ p { margin: 0; }
 .showcase { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: var(--gap-section); }
 .sc-in, .sc-out { position: relative; min-height: 90svh; padding: 30svh var(--margin) 140px; }
 .sc-in { background: var(--dark); color: var(--dark-ink); }
-.sc-out { background: var(--light); }
-.sc-in .file { overflow-wrap: anywhere; font-size: var(--step-small); color: #b9b4ac; margin-bottom: 12px; padding-left: calc(100% / 12); }
+.sc-out { background: var(--light); color: var(--light-ink); }
+.sc-in .file { overflow-wrap: anywhere; font-size: var(--step-small); color: #a3a3a3; margin-bottom: 12px; padding-left: calc(100% / 12); }
 .sc-in textarea {
   display: block; width: calc(100% - 100% / 12); margin-left: calc(100% / 12); min-height: 300px; resize: vertical;
   background: transparent; color: var(--dark-ink); border: 0; padding: 0; font-family: ui-monospace, Consolas, monospace; /* taste-skill-ignore: data-ui fragment / literal code */
@@ -142,51 +161,51 @@ p { margin: 0; }
 .sc-title { position: absolute; bottom: 32px; font-size: var(--step-head); }
 .sc-in .sc-title { left: var(--margin); }
 .sc-out .sc-title { right: var(--margin); text-align: right; }
-.regedit { width: min(100%, 520px); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; background: #ffffff; color: #1b1b1b; border: 1px solid #c9c9c9; border-radius: 6px; overflow: hidden; } /* taste-skill-ignore: data-ui fragment / literal code */
-.regedit .re-path { padding: 8px 12px; background: #f3f3f3; border-bottom: 1px solid #dcdcdc; word-break: break-all; } /* taste-skill-ignore: data-ui fragment / literal code */
+.regedit { width: min(100%, 520px); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; background: #202020; color: #f0f0f0; border: 1px solid #3a3a3a; border-radius: 6px; overflow: hidden; } /* taste-skill-ignore: data-ui fragment / literal code */
+.regedit .re-path { padding: 8px 12px; background: #2b2b2b; border-bottom: 1px solid #3a3a3a; word-break: break-all; } /* taste-skill-ignore: data-ui fragment / literal code */
 .regedit table { width: 100%; border-collapse: collapse; }
 .regedit th, .regedit td { text-align: left; padding: 7px 12px; font-weight: 400; }
-.regedit th { color: #5e5e5e; border-bottom: 1px solid #e5e5e5; font-size: 13px; } /* taste-skill-ignore: data-ui fragment / literal code */
-.regedit tr.hl td { background: #cfe3ea; }
+.regedit th { color: #a0a0a0; border-bottom: 1px solid #333333; font-size: 13px; } /* taste-skill-ignore: data-ui fragment / literal code */
+.regedit tr.hl td { background: #0e3a55; }
 .regedit + .regedit { margin-top: 16px; }
-.re-empty { padding: 14px 12px; color: #8a1c1c; }
+.re-empty { padding: 14px 12px; color: #ff9a8a; }
 
 /* ---------- how it works: one card, four fields ---------- */
 .how { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 0; }
 .how ol { display: contents; list-style: none; }
 .field { position: relative; min-height: 84svh; padding: var(--margin); }
 .field:nth-child(1) { background: var(--surface); }
-.field:nth-child(2) { background: #b9b2a6; }
-.field:nth-child(3) { background: #3b3834; color: var(--dark-ink); }
+.field:nth-child(2) { background: var(--light); color: var(--light-ink); }
+.field:nth-child(3) { background: var(--dark); color: var(--dark-ink); }
 .field:nth-child(4) { background: var(--accent); color: var(--accent-ink); }
-.how h2 { font-size: var(--step-lead); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.how h2 { font-size: var(--step-lead); }
 .how-card {
   position: absolute; top: 38%; left: 50%; width: min(260px, calc(100% - 2 * var(--margin))); transform: translateX(-50%);
-  font: 14px/1.45 "Segoe UI", system-ui, sans-serif; background: #fbfaf8; color: #1b1b1b; border: 1px solid #cfcac2; border-radius: 6px; padding: 14px; /* taste-skill-ignore: data-ui fragment / literal code */
+  font: 14px/1.45 "Segoe UI", system-ui, sans-serif; background: #2b2b2b; color: #f3f3f3; border: 1px solid #3d3d3d; border-radius: 6px; padding: 14px; /* taste-skill-ignore: data-ui fragment / literal code */
   transition: transform 150ms var(--ease);
 }
 .field:hover .how-card { transform: translate(-50%, -6px); }
 .how-card b { display: block; font-weight: 600; margin-bottom: 6px; word-break: break-word; }
 .how-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .how-card li { display: flex; justify-content: space-between; gap: 8px; }
-.how-card .ok { color: #1a7f37; }
-.how-card .meta { color: #5e5e5e; }
-.how-card .bar-p { height: 6px; background: #e6e2dc; border-radius: 3px; margin: 10px 0 6px; overflow: hidden; }
-.how-card .bar-p i { display: block; height: 100%; width: 100%; background: #1a7f37; }
+.how-card .ok { color: #6ccb5f; }
+.how-card .meta { color: #a6a6a6; }
+.how-card .bar-p { height: 6px; background: #3d3d3d; border-radius: 3px; margin: 10px 0 6px; overflow: hidden; }
+.how-card .bar-p i { display: block; height: 100%; width: 100%; background: #6ccb5f; }
 .clause { position: absolute; left: var(--margin); right: var(--margin); bottom: 28px; font-size: var(--step-lead); line-height: 1.15; letter-spacing: -0.02em; font-weight: 500; }
 
 /* ---------- stats: figure set by the visitor ---------- */
 .stats { position: relative; min-height: 88svh; padding: var(--gap-section) var(--margin) 48px; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; grid-template-rows: auto auto 1fr auto; }
 .stats h2 { grid-column: 1 / span 7; font-size: var(--step-head); }
-.build-ctl { grid-column: 1 / span 5; margin-top: 28px; width: min(100%, 400px); font: 15px/1.4 "Segoe UI", system-ui, sans-serif; background: #fbfaf8; border: 1px solid #cfcac2; border-radius: 6px; padding: 14px; } /* taste-skill-ignore: data-ui fragment / literal code */
-.build-ctl label { display: block; margin-bottom: 8px; color: #3a3a3a; }
-.build-ctl input { width: 100%; height: 44px; font: 600 20px "Segoe UI", system-ui, sans-serif; padding: 0 12px; border: 1px solid #b9b4ac; border-radius: 4px; background: #fff; color: #111; } /* taste-skill-ignore: data-ui fragment / literal code */
+.build-ctl { grid-column: 1 / span 5; margin-top: 28px; width: min(100%, 400px); font: 15px/1.4 "Segoe UI", system-ui, sans-serif; background: #202020; color: #f0f0f0; border: 1px solid #3a3a3a; border-radius: 6px; padding: 14px; } /* taste-skill-ignore: data-ui fragment / literal code */
+.build-ctl label { display: block; margin-bottom: 8px; color: #c8c8c8; }
+.build-ctl input { width: 100%; height: 44px; font: 600 20px "Segoe UI", system-ui, sans-serif; padding: 0 12px; border: 1px solid #4a4a4a; border-bottom: 2px solid var(--accent); border-radius: 4px; background: #2b2b2b; color: #ffffff; } /* taste-skill-ignore: data-ui fragment / literal code */
 .reqs { grid-column: 8 / span 5; grid-row: 1 / span 2; align-self: start; margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; max-width: 46ch; }
 .reqs li { padding: 0 0 14px; }
 .reqs b { font-weight: 500; }
-.figure { grid-column: 1 / span 8; grid-row: 4; align-self: end; display: flex; align-items: baseline; gap: .12em; font-size: var(--step-giant); font-weight: 700; line-height: .8; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
-.figure small { font-size: var(--step-lead); letter-spacing: -0.01em; font-weight: 600; }
-.figure.no { color: #8a1c1c; }
+.figure { grid-column: 1 / span 8; grid-row: 4; align-self: end; display: flex; align-items: baseline; gap: .12em; font-size: var(--step-giant); font-weight: 800; font-stretch: 62%; line-height: .8; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.figure small { font-size: var(--step-lead); text-transform: uppercase; letter-spacing: 0; font-weight: 800; color: var(--accent); }
+.figure.no, .figure.no small { color: #ff7a66; }
 .verdict { grid-column: 9 / span 4; grid-row: 4; align-self: end; max-width: 32ch; }
 
 /* ---------- faq ---------- */
@@ -210,19 +229,19 @@ p { margin: 0; }
 .foot { display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; padding: var(--gap-section) 10px 10px; }
 .tile { background: var(--surface); border-radius: var(--radius); padding: 20px; min-height: 220px; position: relative; }
 .t-statement { grid-column: 1 / span 4; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
-.t-claim { font-size: var(--step-lead); font-weight: 400; line-height: 1.2; letter-spacing: -0.015em; }
+.t-claim { font-size: var(--step-lead); line-height: .95; }
 .t-statement .legal { font-size: var(--step-small); color: var(--muted); display: grid; gap: .5em; }
 .t-nav { grid-column: 5 / span 3; }
 .t-nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .t-nav a, .t-mail a { text-decoration: none; }
 .t-nav a:hover, .t-mail a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .t-ver { grid-column: 8 / span 2; display: flex; flex-direction: column; justify-content: space-between; }
-.t-ver p:first-child { font-size: var(--step-lead); letter-spacing: -0.015em; }
+.t-ver p:first-child { font-size: var(--step-lead); font-weight: 800; font-stretch: 62%; text-transform: uppercase; }
 .t-mail { grid-column: 10 / span 3; display: flex; flex-direction: column; justify-content: flex-end; }
 .t-word { grid-column: 1 / span 8; min-height: 320px; background: var(--ink); color: var(--bg); display: grid; place-items: center; }
-.t-word p { font-size: var(--step-giant); font-weight: 700; letter-spacing: -0.05em; line-height: .85; text-align: center; }
-.t-go { grid-column: 9 / span 4; min-height: 320px; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-size: var(--step-lead); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; transition: background-color 160ms var(--ease); }
-.t-go:hover { background: #1d5a6a; }
+.t-word p { font-size: var(--step-giant); font-weight: 800; font-stretch: 62%; text-transform: uppercase; letter-spacing: -0.01em; line-height: .85; text-align: center; }
+.t-go { grid-column: 9 / span 4; min-height: 320px; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-size: var(--step-lead); font-weight: 800; font-stretch: 62%; text-transform: uppercase; line-height: .95; transition: background-color 160ms var(--ease); }
+.t-go:hover { background: var(--accent-2); }
 .t-go svg { position: absolute; right: 20px; bottom: 20px; width: 64px; height: 64px; transition: transform 200ms var(--ease); }
 .t-go:hover svg { transform: translate(4px, -4px); }
 
@@ -242,7 +261,7 @@ p { margin: 0; }
   .bar nav { display: none; }
   .hero { height: auto; }
   .hero-stage { position: relative; height: auto; overflow: visible; padding: 96px var(--margin) 56px; }
-  .hero h1 { position: static; transform: none; display: block; font-size: clamp(2.25rem, 7vw, 4rem); font-weight: 600; }
+  .hero h1 { position: static; transform: none; display: block; font-size: clamp(2.75rem, 10vw, 5.5rem); }
   .hero h1 span { display: block; }
   .hero .h-right { margin-top: 20px; }
   .reel-window { position: relative; left: auto; width: auto; transform: none; margin-top: 20px; }
@@ -422,7 +441,7 @@ p { margin: 0; }
   </div>
   <div class="sc-out">
     <div id="regout" data-ui aria-live="polite"></div>
-    <p class="sc-title" aria-hidden="true" style="font-weight:600;letter-spacing:-0.035em;line-height:.98">es lo que aplica</p>
+    <p class="sc-title display" aria-hidden="true">es lo que aplica</p>
   </div>
 </section>
 
@@ -507,7 +526,7 @@ p { margin: 0; }
     </details>
     <details name="faq">
       <summary>¿Tiene virus?<span class="plus" aria-hidden="true"></span></summary>
-      <div class="answer"><p>Todo el playbook es texto plano en este repositorio y cada <code>.apbx</code> se compila a partir de él. Cada release publica su SHA256.</p><p>Un aviso honesto: Defender puede marcar <code>Remove-Edge.exe</code> como <code>Trojan:Win32/Yomal!rfn</code>. Es una detección por reputación típica de los ejecutables PyInstaller. Meridian lo descarga fijado a una versión y comprueba su hash antes de ejecutarlo.</p></div>
+      <div class="answer"><p>Todo el playbook es texto plano en este repositorio, y GitHub Actions compila cada versión a partir de él. Cada release publica su SHA256.</p><p>Un aviso honesto: Defender puede marcar <code>Remove-Edge.exe</code> como <code>Trojan:Win32/Yomal!rfn</code>. Es una detección por reputación típica de los ejecutables PyInstaller. Meridian lo descarga fijado a una versión y comprueba su hash antes de ejecutarlo.</p></div>
     </details>
     <details name="faq">
       <summary>¿Puedo volver atrás?<span class="plus" aria-hidden="true"></span></summary>
@@ -523,7 +542,7 @@ p { margin: 0; }
     </details>
     <details name="faq">
       <summary>¿Hay problemas conocidos?<span class="plus" aria-hidden="true"></span></summary>
-      <div class="answer"><p>Sí, y están apuntados: Windows puede reinstalar CrossDevice en un segundo reinicio; el acceso directo de Copilot en la barra puede volver tras otro arranque; con una cuenta de usuario estándar, el script de usuarios nuevos pide elevación; y Atlas Toolbox 0.1.13 tiene fallos propios en algunos estados.</p></div>
+      <div class="answer"><p>Uno, y no es de Meridian: Atlas Toolbox 0.1.13 tiene fallos propios al mostrar algunos estados (Terminals, Mitigations, indexación). Lo que aplica el playbook es correcto.</p><p>El otro aviso es el de Defender con <code>Remove-Edge.exe</code>, explicado en «¿Tiene virus?».</p></div>
     </details>
     <details name="faq">
       <summary>¿Dónde reporto un error?<span class="plus" aria-hidden="true"></span></summary>
@@ -552,7 +571,7 @@ p { margin: 0; }
   </nav>
   <div class="tile t-ver">
     <p>v1.0.0</p>
-    <p>Build 26300<br>Base: AtlasOS 0.5.0</p>
+    <p>Build 26300<br>Base: AtlasOS 0.5.0<br><span id="dl-count" hidden></span></p>
   </div>
   <div class="tile t-mail">
     <a href="https://github.com/zykmm/meridian-26h2/issues">github.com/zykmm/<wbr>meridian-26h2/issues</a>
@@ -653,6 +672,17 @@ p { margin: 0; }
     ver.textContent = msg;
   }
   b.addEventListener('input', check); check();
+
+  /* downloads: sum of .apbx downloads across all releases (GitHub API) */
+  fetch('https://api.github.com/repos/zykmm/meridian-26h2/releases?per_page=100')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(rs => {
+      const n = rs.flatMap(r => r.assets).filter(a => a.name.endsWith('.apbx')).reduce((s, a) => s + a.download_count, 0);
+      const el = document.getElementById('dl-count');
+      el.textContent = n.toLocaleString('es') + (n === 1 ? ' descarga' : ' descargas');
+      el.hidden = false;
+    })
+    .catch(() => {});
 
   /* entrances */
   const targets = document.querySelectorAll('[data-rise], .field, .faq details, .tile');

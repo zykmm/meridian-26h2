@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zykmm.github.io/meridian-26h2/sitemap.xml

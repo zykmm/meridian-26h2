@@ -13,4 +13,4 @@ Windows 11 26H2 (build 26300) actualizado, la última versión de AME Wizard, In
 Adaptación a 26H2 con 79 cambios documentados: Widgets y navegador tras el reinicio (UCPD), un bloqueo de versión que funciona, Edge fijado y comprobado con SHA256, Copilot sin restos, reglas de firewall independientes del idioma, apps nuevas de 26H2, opciones del asistente respetadas y estados coherentes con Atlas Toolbox. Lista completa en [`CAMBIOS-26H2.md`](https://github.com/zykmm/meridian-26h2/blob/main/CAMBIOS-26H2.md).
 
 ### Problemas conocidos
-CrossDevice puede reinstalarse tras un segundo reinicio; el acceso directo de Copilot puede volver a la barra de tareas; con un usuario estándar, el script de usuarios nuevos pide elevación; Atlas Toolbox 0.1.13 tiene fallos propios. Detalles en el [README](https://github.com/zykmm/meridian-26h2#problemas-conocidos).
+Atlas Toolbox 0.1.13 tiene fallos propios al mostrar algunos estados, y Defender puede marcar `Remove-Edge.exe` por reputación. Detalles en el [README](https://github.com/zykmm/meridian-26h2#problemas-conocidos).
