@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/zykmm/meridian-26h2/releases"><img alt="Última versión" src="https://img.shields.io/github/v/release/zykmm/meridian-26h2?include_prereleases&style=flat-square&label=versi%C3%B3n&color=256f82"></a>
+  <a href="https://github.com/zykmm/meridian-26h2/releases/latest"><img alt="Última versión" src="https://img.shields.io/github/v/release/zykmm/meridian-26h2?style=flat-square&label=versi%C3%B3n&color=dafa9c&labelColor=0f0f0f"></a>
   <a href="https://github.com/zykmm/meridian-26h2/actions/workflows/build.yml"><img alt="Compilación" src="https://img.shields.io/github/actions/workflow/status/zykmm/meridian-26h2/build.yml?style=flat-square&label=compilaci%C3%B3n"></a>
   <a href="https://github.com/zykmm/meridian-26h2/releases"><img alt="Descargas" src="https://img.shields.io/github/downloads/zykmm/meridian-26h2/total?style=flat-square&label=descargas&color=dafa9c&labelColor=0f0f0f"></a>
   <a href="https://github.com/zykmm/meridian-26h2/stargazers"><img alt="Estrellas" src="https://img.shields.io/github/stars/zykmm/meridian-26h2?style=flat-square&label=estrellas&color=0f0f0f"></a>
@@ -13,7 +13,9 @@
 
 <p align="center">
   <a href="https://zykmm.github.io/meridian-26h2/"><b>Web</b></a> ·
-  <a href="https://github.com/zykmm/meridian-26h2/releases"><b>Descargar</b></a> ·
+  <a href="https://zykmm.github.io/meridian-26h2/en/"><b>English</b></a> ·
+  <a href="https://github.com/zykmm/meridian-26h2/releases/latest"><b>Descargar</b></a> ·
+  <a href="https://zykmm.github.io/meridian-26h2/guia/instalar-atlasos-windows-11-26h2/"><b>Guía de instalación</b></a> ·
   <a href="CAMBIOS-26H2.md"><b>Registro de cambios</b></a> ·
   <a href="https://github.com/zykmm/meridian-26h2/issues/new/choose"><b>Reportar un error</b></a>
 </p>
@@ -55,7 +57,7 @@ Para 26H2 se revisó el playbook entero: 190 archivos YAML, más de 800 acciones
 
 ## Instalación
 
-1. Descarga `Meridian-26H2-vX.Y.Z.apbx` y su `.sha256` desde [Releases](https://github.com/zykmm/meridian-26h2/releases).
+1. Descarga `Meridian-26H2-vX.Y.Z.apbx` y su `.sha256` desde la [última versión](https://github.com/zykmm/meridian-26h2/releases/latest). Si quieres una segunda opinión, súbelo también a [VirusTotal](https://www.virustotal.com).
 2. Comprueba la descarga en PowerShell:
    ```powershell
    (Get-FileHash .\Meridian-26H2-v1.0.0.apbx -Algorithm SHA256).Hash
@@ -71,6 +73,19 @@ Para comprobar el resultado, ejecuta [`tools/verificar-26h2.ps1`](tools/verifica
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\verificar-26h2.ps1 -Nombre mipc
 ```
+
+## Cómo se probó
+
+Cada cambio se probó en una máquina virtual limpia con **Windows 11 Pro 26H2, build 26300.9550** y todas las actualizaciones, con las opciones de un usuario real: Defender activado, Edge fuera y Brave como navegador.
+
+| Comprobación | Resultado |
+|---|---|
+| Registro de AME Wizard | **0 errores** |
+| Acciones del playbook comprobadas una a una en el registro | **541 OK**, sin fallos |
+| Scripts de la carpeta Atlas con el estado correcto | **208 OK** |
+| [`tools/verificar-26h2.ps1`](tools/verificar-26h2.ps1) | **66 OK, 0 FALLO** |
+
+Puedes repetir la última comprobación en tu equipo: el script solo lee el sistema. La guía paso a paso está en la [web](https://zykmm.github.io/meridian-26h2/guia/instalar-atlasos-windows-11-26h2/).
 
 ## Problemas conocidos
 
@@ -136,5 +151,5 @@ Meridian 26H2 se distribuye bajo la **[GNU GPLv3](LICENSE)**, la misma licencia 
 
 **Meridian 26H2 is an UNOFFICIAL fork of the [AtlasOS](https://github.com/Atlas-OS/Atlas) 0.5.0 playbook**, adapted and audited for **Windows 11 26H2 (build 26300)**. Use it to run AtlasOS-style optimizations on Windows 11 26H2: debloat Windows 11, remove telemetry, Copilot and Edge, improve gaming performance and privacy, with every change documented. It is not affiliated with or endorsed by the Atlas team. Please report Meridian issues [here](https://github.com/zykmm/meridian-26h2/issues), never to Atlas. On 24H2 or 25H2, use the official AtlasOS.
 
-Download the `.apbx` from [Releases](https://github.com/zykmm/meridian-26h2/releases), verify its SHA256, and drop it into [AME Wizard](https://ameliorated.io). Every change from AtlasOS 0.5.0 and the reason for it is listed (in Spanish) in [`CAMBIOS-26H2.md`](CAMBIOS-26H2.md). License: GPLv3.
+Download the `.apbx` from the [latest release](https://github.com/zykmm/meridian-26h2/releases/latest), verify its SHA256, and drop it into [AME Wizard](https://ameliorated.io). Full English site and step-by-step guide: [zykmm.github.io/meridian-26h2/en](https://zykmm.github.io/meridian-26h2/en/) · [How to install AtlasOS on Windows 11 26H2](https://zykmm.github.io/meridian-26h2/en/guide/install-atlasos-windows-11-26h2/). Tested on a clean Windows 11 Pro 26H2 (26300.9550) VM: 0 AME errors, 66/66 checks passed. Every change from AtlasOS 0.5.0 and the reason for it is listed (in Spanish) in [`CAMBIOS-26H2.md`](CAMBIOS-26H2.md). License: GPLv3.
 </details>

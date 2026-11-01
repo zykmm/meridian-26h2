@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to install AtlasOS on Windows 11 26H2 (build 26300)</title>
+<meta name="description" content="Guide to running AtlasOS on Windows 11 26H2: why the official release will not install on build 26300 and how to apply Meridian 26H2 step by step with AME Wizard.">
+<link rel="canonical" href="https://zykmm.github.io/meridian-26h2/en/guide/install-atlasos-windows-11-26h2/">
+<link rel="alternate" hreflang="es" href="https://zykmm.github.io/meridian-26h2/guia/instalar-atlasos-windows-11-26h2/">
+<link rel="alternate" hreflang="en" href="https://zykmm.github.io/meridian-26h2/en/guide/install-atlasos-windows-11-26h2/">
+<link rel="alternate" hreflang="x-default" href="https://zykmm.github.io/meridian-26h2/en/guide/install-atlasos-windows-11-26h2/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to install AtlasOS on Windows 11 26H2 (build 26300)">
+<meta property="og:description" content="Guide to running AtlasOS on Windows 11 26H2: why the official release will not install on build 26300 and how to apply Meridian 26H2 step by step with AME Wizard.">
+<meta property="og:url" content="https://zykmm.github.io/meridian-26h2/en/guide/install-atlasos-windows-11-26h2/">
+<meta property="og:image" content="https://zykmm.github.io/meridian-26h2/img/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f0f0f">
+<link rel="icon" href="../../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/guide.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to install AtlasOS on Windows 11 26H2", "description": "Guide to running AtlasOS on Windows 11 26H2: why the official release will not install on build 26300 and how to apply Meridian 26H2 step by step with AME Wizard.", "inLanguage": "en", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "author": {"@type": "Person", "name": "zykmm", "url": "https://github.com/zykmm"}, "about": {"@type": "SoftwareApplication", "name": "Meridian 26H2", "operatingSystem": "Windows 11 26H2"}, "image": "https://zykmm.github.io/meridian-26h2/img/social-preview.png", "mainEntityOfPage": "https://zykmm.github.io/meridian-26h2/en/guide/install-atlasos-windows-11-26h2/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Meridian 26H2", "item": "https://zykmm.github.io/meridian-26h2/en/"}, {"@type": "ListItem", "position": 2, "name": "Install guide", "item": "https://zykmm.github.io/meridian-26h2/en/guide/install-atlasos-windows-11-26h2/"}]}</script>
+</head>
+<body>
+<header class="bar">
+  <a class="wordmark" href="../../../en/"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="#ffffff" d="M118.00 32.48A104 104 0 0 0 118.00 239.52Z"/><path fill="#dafa9c" d="M138.00 16.48A104 104 0 0 1 138.00 223.52Z"/></svg><span>Meridian 26H2</span></a>
+  <nav aria-label="Sections"><a href="../../">Home</a><a href="../../#pruebas">Tests</a><a href="../../../guia/instalar-atlasos-windows-11-26h2/" hreflang="es" lang="es">Español</a></nav>
+  <a class="button" href="https://github.com/zykmm/meridian-26h2/releases/latest">Download</a>
+</header>
+<main class="guide">
+  <article>
+    <h1>How to install AtlasOS on Windows 11 26H2</h1>
+    <p class="lead">AtlasOS 0.5.0 does not support build 26300. This guide explains why and how to apply Meridian 26H2, its unofficial fork for 26H2, step by step.</p>
+    <p class="meta">Updated 1 November 2026 · by zykmm</p>
+    <div class="note"><p><b>First:</b> Meridian 26H2 is an <b>unofficial</b> AtlasOS fork, not affiliated with the Atlas team. On 24H2 or 25H2, install the <a href="https://atlasos.net">official AtlasOS</a>; this guide is for 26H2 only.</p></div>
+
+    <h2>Why AtlasOS will not install on 26H2</h2>
+    <p>AtlasOS 0.5.0 lists its supported builds in <code>playbook.conf</code>: 26100 (24H2) and 26200 (25H2). Windows 11 26H2 is build 26300, so AME Wizard rejects the official playbook. The <a href="https://docs.atlasos.net/faq/general-faq/upgrading-windows-version/">Atlas documentation</a> does not list 26H2 either.</p>
+    <p>Removing that check is not enough: 26H2 changes things the playbook touches. UCPD blocks Widgets and the default browser during install, new apps such as Quick Assist and CrossDevice arrive, and the Copilot app leaves 1.1 GB behind. Meridian fixes these, among the 79 changes logged in <a href="https://github.com/zykmm/meridian-26h2/blob/main/CAMBIOS-26H2.md">CAMBIOS-26H2.md</a> (Spanish).</p>
+
+    <h2>Requirements</h2>
+    <ul>
+      <li><b>Windows 11 26H2, build 26300</b>, fully updated. Check with <kbd>Win</kbd>&nbsp;+&nbsp;<kbd>R</kbd> → <code>winver</code>.</li>
+      <li><b>A backup.</b> There is no uninstaller: going back to stock Windows means reinstalling it.</li>
+      <li>The latest <a href="https://ameliorated.io">AME Wizard</a>.</li>
+      <li>Internet on, PC plugged in, no third-party antivirus.</li>
+    </ul>
+
+    <h2>Step-by-step install</h2>
+    <ol>
+      <li>Download <code>Meridian-26H2-v1.0.0.apbx</code> and its <code>.sha256</code> from the <a href="https://github.com/zykmm/meridian-26h2/releases/latest">latest release</a>.</li>
+      <li>Check the download in PowerShell and compare it with the <code>.sha256</code> file:
+<pre><code>(Get-FileHash .\Meridian-26H2-v1.0.0.apbx -Algorithm SHA256).Hash</code></pre>
+      For a second opinion, upload it to <a href="https://www.virustotal.com">VirusTotal</a>.</li>
+      <li>Open AME Wizard and drop the <code>.apbx</code> onto the window.</li>
+      <li>AME checks the requirements and walks you through turning off Defender and UCPD for the install.</li>
+      <li>Pick your options: Defender, CPU mitigations, automatic updates, browser and whether to remove Edge. If unsure, keep the recommended ones.</li>
+      <li>Wait about 15 minutes without turning the PC off. AME reboots when done.</li>
+      <li>Sign in: <code>postReboot.ps1</code> applies Widgets and the default browser on first sign-in.</li>
+      <li>If you kept Defender on, turn <b>Tamper Protection</b> back on. Meridian reminds you with a prompt.</li>
+    </ol>
+
+    <h2>Check the result</h2>
+    <p>Download <a href="https://github.com/zykmm/meridian-26h2/blob/main/tools/verificar-26h2.ps1"><code>verificar-26h2.ps1</code></a> and run it as administrator. It only reads the system and writes a report without your PC or user name (the report is in Spanish):</p>
+<pre><code>powershell -NoProfile -ExecutionPolicy Bypass -File .\verificar-26h2.ps1 -Nombre mypc</code></pre>
+    <p>On the test virtual machine the result was <b>66 OK, 0 FAIL</b>.</p>
+
+    <h2>Common problems</h2>
+    <table>
+      <thead><tr><th>What you see</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><td>AME says the Windows version is not supported</td><td>Check <code>winver</code>: it must say 26300. On 26100 or 26200 use the official AtlasOS.</td></tr>
+        <tr><td>AME asks to install pending updates</td><td>Install them all in Windows Update, reboot and open AME again.</td></tr>
+        <tr><td>Defender flags <code>Remove-Edge.exe</code></td><td>A reputation-based detection common with PyInstaller executables. It does not affect the install. Meridian downloads version 2.3 and checks its SHA256.</td></tr>
+        <tr><td>Atlas Toolbox shows a state that looks wrong</td><td>Those are Toolbox 0.1.13's own bugs. What the playbook applies is correct.</td></tr>
+      </tbody>
+    </table>
+    <p>Something else? Open an <a href="https://github.com/zykmm/meridian-26h2/issues/new/choose">issue</a> with your build, your options and the logs in <code>C:\ProgramData\AME\Logs</code>.</p>
+  </article>
+  <aside>
+    <p class="big">Build 26300</p>
+    <p>Meridian 26H2 v1.0.0 · based on AtlasOS 0.5.0 · GPLv3</p>
+    <p><a class="button" href="https://github.com/zykmm/meridian-26h2/releases/latest">Download</a></p>
+    <p><a href="../../">What changes from AtlasOS</a></p>
+    <p><a href="https://github.com/zykmm/meridian-26h2">Source code</a></p>
+  </aside>
+</main>
+<footer>Meridian 26H2 is an unofficial AtlasOS fork, not affiliated with its team. GPLv3 licence. Windows is a trademark of Microsoft.</footer>
+</body>
+</html>
