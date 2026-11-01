@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/zykmm/meridian-26h2/releases/latest"><img alt="Última versión" src="https://img.shields.io/github/v/release/zykmm/meridian-26h2?include_prereleases&style=flat-square&label=versi%C3%B3n&color=256f82"></a>
+  <a href="https://github.com/zykmm/meridian-26h2/releases"><img alt="Última versión" src="https://img.shields.io/github/v/release/zykmm/meridian-26h2?include_prereleases&style=flat-square&label=versi%C3%B3n&color=256f82"></a>
   <a href="https://github.com/zykmm/meridian-26h2/actions/workflows/build.yml"><img alt="Compilación" src="https://img.shields.io/github/actions/workflow/status/zykmm/meridian-26h2/build.yml?style=flat-square&label=compilaci%C3%B3n"></a>
   <img alt="Windows 11 26H2" src="https://img.shields.io/badge/Windows%2011-26H2%20%C2%B7%20build%2026300-0a0a0a?style=flat-square">
   <a href="LICENSE"><img alt="Licencia GPLv3" src="https://img.shields.io/badge/licencia-GPLv3-0a0a0a?style=flat-square"></a>
@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://zykmm.github.io/meridian-26h2/"><b>Web</b></a> ·
-  <a href="https://github.com/zykmm/meridian-26h2/releases/latest"><b>Descargar</b></a> ·
+  <a href="https://github.com/zykmm/meridian-26h2/releases"><b>Descargar</b></a> ·
   <a href="CAMBIOS-26H2.md"><b>Registro de cambios</b></a> ·
   <a href="https://github.com/zykmm/meridian-26h2/issues/new/choose"><b>Reportar un error</b></a>
 </p>
@@ -51,7 +51,7 @@ Para 26H2 se revisó el playbook entero: 190 archivos YAML, más de 800 acciones
 
 ## Instalación
 
-1. Descarga `Meridian-26H2-vX.Y.Z.apbx` y su `.sha256` desde [Releases](https://github.com/zykmm/meridian-26h2/releases/latest).
+1. Descarga `Meridian-26H2-vX.Y.Z.apbx` y su `.sha256` desde [Releases](https://github.com/zykmm/meridian-26h2/releases).
 2. Comprueba la descarga en PowerShell:
    ```powershell
    (Get-FileHash .\Meridian-26H2-v1.0.0.apbx -Algorithm SHA256).Hash
@@ -135,5 +135,5 @@ Meridian 26H2 se distribuye bajo la **[GNU GPLv3](LICENSE)**, la misma licencia 
 
 **Meridian 26H2 is an UNOFFICIAL fork of the [AtlasOS](https://github.com/Atlas-OS/Atlas) 0.5.0 playbook**, adapted and audited for **Windows 11 26H2 (build 26300)**. It is not affiliated with or endorsed by the Atlas team. Please report Meridian issues [here](https://github.com/zykmm/meridian-26h2/issues), never to Atlas. On 24H2 or 25H2, use the official AtlasOS.
 
-Download the `.apbx` from [Releases](https://github.com/zykmm/meridian-26h2/releases/latest), verify its SHA256, and drop it into [AME Wizard](https://ameliorated.io). Every change from AtlasOS 0.5.0 and the reason for it is listed (in Spanish) in [`CAMBIOS-26H2.md`](CAMBIOS-26H2.md). License: GPLv3.
+Download the `.apbx` from [Releases](https://github.com/zykmm/meridian-26h2/releases), verify its SHA256, and drop it into [AME Wizard](https://ameliorated.io). Every change from AtlasOS 0.5.0 and the reason for it is listed (in Spanish) in [`CAMBIOS-26H2.md`](CAMBIOS-26H2.md). License: GPLv3.
 </details>
